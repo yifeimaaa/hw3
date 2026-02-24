@@ -1,0 +1,21 @@
+<h1><%= @place.name %></h1>
+
+<h2>Entries</h2>
+
+<ul>
+  <% for entry in @entries %>
+    <li>
+      <h3><%= entry.title %></h3>
+      <p><%= entry.occurred_on %></p>
+      <p><%= entry.description %></p>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+  <a href="/entries/new?place_id=<%= @place.id %>">Add a New Entry</a>
+</p>
+
+<p>
+  <a href="/places">Back to All Places</a>
+</p>
