@@ -1,0 +1,30 @@
+{
+  "name": "Rails Development Environment",
+  "image": "ruby:4.0",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+  },
+  "remoteEnv": {
+    "WORKSPACE_FOLDER": "${containerWorkspaceFolder}"
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-lsp",
+        "vortizhe.simple-ruby-erb"
+      ],
+      "settings": {
+        "editor.stickyScroll.enabled": true,
+        "[ruby]": {
+          "editor.defaultFormatter": "Shopify.ruby-lsp",
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true,
+          "editor.semanticHighlighting.enabled": true
+        }
+      }
+    }
+  }
+}
